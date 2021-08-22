@@ -17,3 +17,23 @@ exports.created = (req, res) => {
     }
   });
 };
+
+exports.finished = (req, res) => {
+  const task = {
+    title: req.body.title,
+    description: req.body.description,
+    date: req.body.date,
+    status: req.body.status,
+  };
+  if (req.body.status) {
+    Task.find({ status: "terminé" }, function (err, task) {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(task);
+      }
+    });
+  } else {
+    console.log("tu l'as dans le cul");
+  }
+};

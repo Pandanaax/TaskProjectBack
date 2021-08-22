@@ -4,7 +4,14 @@ module.exports = (mongoose) => {
       title: String,
       description: String,
       date: Date,
-      status: String,
+      status: {
+        type: String,
+        enum: {
+          encours: "en cours",
+          termine: "terminé",
+        },
+        default: "en cours",
+      },
     },
     { timestamps: true }
   );
