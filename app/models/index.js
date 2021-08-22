@@ -7,5 +7,6 @@ const db = {};
 db.mongoose = mongoose;
 db.mongoConnectionString = dbConfig.mongoConnectionString;
 db.user = require("./user.model.js")(mongoose);
+db.task = require("./task.model")(mongoose);
 
 module.exports = db;

@@ -18,18 +18,18 @@ app.use(
 ); /* bodyParser.urlencoded() is deprecated */
 
 const db = require("./app/models");
-const { user } = require("./app/models");
+const { user } = require("./app/models/user.model");
+// const { task } = require("./app/models/task.model");
 
 // simple route
 app.get("/", (req, res) => {
   res.json({ message: "Welcome to task application." });
 });
 
-var myControllers = require("./app/controllers/user.controller");
-var myRoutes = require("./app/routes/user.routes")(app);
+// require("./app/controllers/index")(app);
+var myRoutes = require("./app/routes/index")(app);
 
-app.use("/api", myRoutes);
-// app.use("/user", myControllers);
+// app.use("/api", myRoutes);
 require("./app/config/db.config")(app);
 
 // set port, listen for requests
