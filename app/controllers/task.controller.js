@@ -34,6 +34,6 @@ exports.finished = (req, res) => {
       }
     });
   } else {
-    console.log("tu l'as dans le cul");
+    console.log(err + "Pas de task");
   }
 };
