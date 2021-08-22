@@ -1,7 +1,4 @@
-var express = require("express");
-var router = express.Router();
-
-/* Use user route */
-router.use("/users", require("./user.routes"));
-
-module.exports = router;
+var userRoutes = require("./user.routes");
+module.exports = (app) => {
+  app.use("/api/user", userRoutes);
+};

@@ -1,5 +1,5 @@
 module.exports = (app) => {
   app.controllers = {
-    user: require("./user.controller")(app),
+    user: require("./user.controller"),
   };
 };
