@@ -6,6 +6,4 @@ router.post("/register", user.register);
 
 router.post("/login", user.login);
 
-// app.use("/api/user", router);
-
 module.exports = router;
