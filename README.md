@@ -6,7 +6,7 @@
 In order to add or edit the code, you first need to clone the repository. Open a terminal and run the following command (you may need to install git first):
 
 ```
-git clone https://github.com/randabali/ProjectNodeJs.git
+git@github.com:randabali/TaskProjectBack.git
 ```
 
 ## Once you have cloned the project, please follow the guidelines below.
