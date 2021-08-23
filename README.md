@@ -1,4 +1,3 @@
-![Alt text](/public/images/node.jpg)
 
 # Simple app to Node.js
 
