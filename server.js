@@ -3,8 +3,11 @@ const cors = require("cors");
 // require("dotenv").config();
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:8080/task",
+const corsOptions = {
+  origin: "*",
+  credentials: true,
+  "access-control-allow-credentials": true,
+  optionSuccessStatus: 200,
 };
 
 app.use(cors(corsOptions));

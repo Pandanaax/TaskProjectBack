@@ -6,6 +6,8 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 exports.register = (req, res) => {
+  console.log("je suis dans la fonction register back");
+  console.log(req.body);
   const saltRounds = 10;
   const password = req.body.password;
   bcrypt.hash(password, saltRounds, function (err, hash) {
@@ -18,7 +20,7 @@ exports.register = (req, res) => {
         email: req.body.email,
         password: hash,
       };
-
+      console.log(newUser, "test");
       User.create(newUser, function (err, docs) {
         if (err) {
           res.send(err);
@@ -31,6 +33,8 @@ exports.register = (req, res) => {
 };
 
 exports.login = (req, res) => {
+  console.log(req.body);
+
   if (req.body.email) {
     if (req.body.password) {
       User.findOne(
@@ -49,6 +53,7 @@ exports.login = (req, res) => {
             let password = req.body.password;
 
             bcrypt.compare(password, user.password, function (err, result) {
+              console.log(req.body);
               if (result) {
                 res.json({
                   token: jwt.sign(

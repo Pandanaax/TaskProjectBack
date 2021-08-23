@@ -37,3 +37,20 @@ exports.finished = (req, res) => {
     console.log(err + "Pas de task");
   }
 };
+
+exports.getAll = (req, res) => {
+  console.log(req.body);
+  const task = {
+    title: req.body.title,
+    description: req.body.description,
+    date: req.body.date,
+    status: req.body.status,
+  };
+  Task.find(function (err, task) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(task);
+    }
+  });
+};
