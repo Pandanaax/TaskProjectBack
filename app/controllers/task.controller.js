@@ -50,3 +50,14 @@ exports.getAll = (req, res) => {
     }
   });
 };
+
+exports.delete = (req, res) => {
+  console.log("je suis là");
+  Task.deleteMany(req.body.id, function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send("L'élement a bien été supprimé");
+    }
+  });
+};
