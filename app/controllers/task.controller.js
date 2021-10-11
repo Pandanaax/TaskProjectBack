@@ -25,17 +25,13 @@ exports.finished = (req, res) => {
     date: req.body.date,
     status: req.body.status,
   };
-  if (req.body.status) {
-    Task.find({ status: "terminé" }, function (err, task) {
-      if (err) {
-        console.log(err);
-      } else {
-        res.send(task);
-      }
-    });
-  } else {
-    console.log(err + "Pas de task");
-  }
+  Task.find({ status: "terminé" }, function (err, task) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.send(task);
+    }
+  });
 };
 
 exports.getAll = (req, res) => {
